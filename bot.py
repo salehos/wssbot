@@ -3,6 +3,7 @@ import time
 from telebot import types
 
 
+bot_token = '773662304:AAHjQ9orNDCxTQt7wpDT1fo08dKdXgT7qBk'
 bot = telebot.TeleBot(bot_token)
 
 user_dict = {}
@@ -29,9 +30,9 @@ def first_step(message):
 def choosing_one(message):
     try:
         if message.text == "نقشه دانشگاه":
-            # keyboard = types.ReplyKeyboardMarkup()
-            # keyboard = types.ReplyKeyboardRemove(selective=False)
-            photo = open("/home/saleh/Desktop/map.jpg", 'rb')
+            keyboard = types.ReplyKeyboardMarkup()
+            keyboard = types.ReplyKeyboardRemove(selective=False)
+            photo = open("/home/wssbot/kuroky.jpg", 'rb')
             msg = bot.send_photo(message.chat.id, photo)
             bot.register_next_step_handler(msg, choosing_one)
         elif message.text == "جدول زمان بندی سمینار ها و کارگاه ها":
@@ -97,6 +98,8 @@ def vote_part(message):
 
 
 
+def provider(message):
+    try
 
 
 
@@ -105,3 +108,4 @@ while True:
         bot.polling()
     except:
         time.sleep(15)
+
