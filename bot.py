@@ -1,9 +1,10 @@
 import telebot
 import time
 from telebot import types
+from decouple import config
+BOT_TOKEN = config('BOT_TOKEN')
 
-
-bot_token = '773662304:AAHjQ9orNDCxTQt7wpDT1fo08dKdXgT7qBk'
+bot_token = BOT_TOKEN
 bot = telebot.TeleBot(bot_token)
 
 user_dict = {}
